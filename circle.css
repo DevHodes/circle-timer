@@ -1,0 +1,386 @@
+c* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #080808;
+  --white: #fff;
+  --yellow: rgb(211, 194, 7);
+  --circlehover: blueviolet;
+  --hover: rgb(255, 255, 255);
+  --hoverC: rgb(244, 23, 240);
+  --padding-grid: 12rem;
+}
+
+html {
+  font-family: "Inter";
+  background: var(--primary);
+  scroll-behavior: smooth;
+
+}
+
+/* OPENING AND CLOSING PAGE - GENERAL STYLE/LAYOUT*/
+
+main {
+  display: flex;
+  height: 60vh;
+  background-color: var(--primary);
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+
+  height: 100px;
+  max-height: 200px;
+  display: flexbox;
+  flex-basis: fit-content;
+  flex-grow: 0;
+  flex-shrink: 4;
+  background-color: var(--primary);
+  min-height: 50%;
+}
+
+/* HEADER */
+
+.headingprimary {
+  --bg-size: 400%;
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-shrink: 5%;
+  flex-grow: 0;
+  --bg-size: 400%;
+  --color-one: hsl(305, 90%, 55%);
+  --color-two: hsl(40 95% 55%);
+  font-size: clamp(3rem, 25vmin, 8rem);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;-webkit-background-clip: text;color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .headingprimary {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+
+main h1 {
+   font-size: 86px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-shrink: 5%;
+  flex-grow: 0; 
+
+}
+
+/* SUB-HEADER */
+main h2 {
+  font-size: 23px;
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-shrink: 5%;
+  flex-grow: 0;
+  -ms-text-size-adjust: 18px;
+}
+
+/* BUTTONS*/
+
+.Begin {
+  justify-content: center;
+  align-self: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 11em;
+  flex-shrink: 5em;
+  flex-basis: fit-content;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons:hover {
+  transform: scale(1.1);
+}
+
+.btnn>button {
+  margin-top: 40px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background-color: var(--yellow);
+  color: var(--primary);
+  display: flex;
+  align-self: center;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  display: inline-flex;
+  -webkit-align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 8px 35px;
+  border-radius: 20px;
+  height: 48px;
+
+}
+
+.btn a {
+  color: var(--primary);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--hoverC);
+  color: var(--yellow);
+  text-decoration: none;
+  cursor: pointer;
+  transition: ease-in-out;
+  animation-timing-function: ease-in-out;
+
+}
+
+
+/* GAME - CIRCLE AND TIMER */
+
+body {
+
+  width: 100%;
+  height: 100vh;
+  background: var(--primary);
+  overflow: hidden;
+
+}
+
+/* circle animation*/
+
+@keyframes move {
+  0% {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  10% {
+    top: 10%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  20% {
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  25% {
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  30% {
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  60% {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  70% {
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  80% {
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  95% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  97% {
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* circle style*/
+.circle {
+  --size: 150px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background: var(--yellow);
+  border-radius: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: moveBall 2s ease-in-out infinite alternate;
+  animation-iteration-count: 1;
+  animation-duration: 40s;
+  animation-fill-mode: forwards;
+  animation: mymove 2s  ease-in-out infinite alternate;
+  -webkit-animation: mymove 2s  ease-in-out infinite alternate;
+}
+
+
+.circle:hover {
+  animation: move 40s linear;
+  cursor: pointer;
+}
+
+@keyframes mymove {
+  from {background-color: rgb(255, 0, 208);}
+  to {background-color: blue;}
+}
+
+
+/* Timer container*/
+
+.containertimer {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140.2px;
+  display: flex;
+  margin: 2%;
+  animation-name: color;
+  position: initial;
+  /* background-color: rgba(229, 41, 223, 0.516); */
+  position: static;
+  border-radius: 100%;
+}
+
+
+/* Timer code and style*/
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.timer {
+  animation: counter 40s;
+  justify-content: center;
+  justify-self: center;
+  counter-reset: num var(--num);
+  font: 900 80px system-ui;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  position: static;
+  color: var(--yellow);
+  animation-iteration-count: 1;
+  display: flex;
+
+}
+
+.timer::after {
+  content: counter(num);
+}
+
+/* Timer animation */
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+
+  to {
+    --num: 40;
+  }
+
+  0% {
+    color: var(--primary);
+  }
+
+  2% {
+    color: var(--yellow);
+  }
+
+  100% {
+    color: rgb(255, 11, 11);
+    position: absolute;
+  }
+
+  101% {
+    color: var(--primary);
+  }
